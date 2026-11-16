@@ -1,5 +1,5 @@
 import json
-from llm_client import ask_gigachat
+from src.gigachat.llm_client import ask_gigachat
 
 def analyze_review_prompt(review_text:str) -> str:
     prompt = f"""

@@ -58,7 +58,9 @@ def rag_answer(question: str, state: dict, k: int = 3):
     user_prompt = f"ФРАГМЕНТЫ ТЕКСТА:\n{context}\n\nВОПРОС: {question}\nОТВЕТ:"
 
     # 4. Отправляем обычный POST-запрос в Ollama (совместимый с OpenAI формат)
-    ollama_url = "http://127.0.0.1:11434/v1/chat/completions"
+    ollama_url = "http://host.docker.internal:11434/v1/chat/completions"
+
+
     payload = {
         "model": "qwen2.5:3b",
         "temperature": 0.1,  # Низкая температура для строгости ответов
